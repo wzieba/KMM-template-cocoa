@@ -13,29 +13,29 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma clang diagnostic ignored "-Wnullability"
 
 __attribute__((swift_name("KotlinBase")))
-@interface LibraryNameBase : NSObject
+@interface SharedBase : NSObject
 - (instancetype)init __attribute__((unavailable));
 + (instancetype)new __attribute__((unavailable));
 + (void)initialize __attribute__((objc_requires_super));
 @end;
 
-@interface LibraryNameBase (LibraryNameBaseCopying) <NSCopying>
+@interface SharedBase (SharedBaseCopying) <NSCopying>
 @end;
 
 __attribute__((swift_name("KotlinMutableSet")))
-@interface LibraryNameMutableSet<ObjectType> : NSMutableSet<ObjectType>
+@interface SharedMutableSet<ObjectType> : NSMutableSet<ObjectType>
 @end;
 
 __attribute__((swift_name("KotlinMutableDictionary")))
-@interface LibraryNameMutableDictionary<KeyType, ObjectType> : NSMutableDictionary<KeyType, ObjectType>
+@interface SharedMutableDictionary<KeyType, ObjectType> : NSMutableDictionary<KeyType, ObjectType>
 @end;
 
-@interface NSError (NSErrorLibraryNameKotlinException)
+@interface NSError (NSErrorSharedKotlinException)
 @property (readonly) id _Nullable kotlinException;
 @end;
 
 __attribute__((swift_name("KotlinNumber")))
-@interface LibraryNameNumber : NSNumber
+@interface SharedNumber : NSNumber
 - (instancetype)initWithChar:(char)value __attribute__((unavailable));
 - (instancetype)initWithUnsignedChar:(unsigned char)value __attribute__((unavailable));
 - (instancetype)initWithShort:(short)value __attribute__((unavailable));
@@ -69,74 +69,74 @@ __attribute__((swift_name("KotlinNumber")))
 @end;
 
 __attribute__((swift_name("KotlinByte")))
-@interface LibraryNameByte : LibraryNameNumber
+@interface SharedByte : SharedNumber
 - (instancetype)initWithChar:(char)value;
 + (instancetype)numberWithChar:(char)value;
 @end;
 
 __attribute__((swift_name("KotlinUByte")))
-@interface LibraryNameUByte : LibraryNameNumber
+@interface SharedUByte : SharedNumber
 - (instancetype)initWithUnsignedChar:(unsigned char)value;
 + (instancetype)numberWithUnsignedChar:(unsigned char)value;
 @end;
 
 __attribute__((swift_name("KotlinShort")))
-@interface LibraryNameShort : LibraryNameNumber
+@interface SharedShort : SharedNumber
 - (instancetype)initWithShort:(short)value;
 + (instancetype)numberWithShort:(short)value;
 @end;
 
 __attribute__((swift_name("KotlinUShort")))
-@interface LibraryNameUShort : LibraryNameNumber
+@interface SharedUShort : SharedNumber
 - (instancetype)initWithUnsignedShort:(unsigned short)value;
 + (instancetype)numberWithUnsignedShort:(unsigned short)value;
 @end;
 
 __attribute__((swift_name("KotlinInt")))
-@interface LibraryNameInt : LibraryNameNumber
+@interface SharedInt : SharedNumber
 - (instancetype)initWithInt:(int)value;
 + (instancetype)numberWithInt:(int)value;
 @end;
 
 __attribute__((swift_name("KotlinUInt")))
-@interface LibraryNameUInt : LibraryNameNumber
+@interface SharedUInt : SharedNumber
 - (instancetype)initWithUnsignedInt:(unsigned int)value;
 + (instancetype)numberWithUnsignedInt:(unsigned int)value;
 @end;
 
 __attribute__((swift_name("KotlinLong")))
-@interface LibraryNameLong : LibraryNameNumber
+@interface SharedLong : SharedNumber
 - (instancetype)initWithLongLong:(long long)value;
 + (instancetype)numberWithLongLong:(long long)value;
 @end;
 
 __attribute__((swift_name("KotlinULong")))
-@interface LibraryNameULong : LibraryNameNumber
+@interface SharedULong : SharedNumber
 - (instancetype)initWithUnsignedLongLong:(unsigned long long)value;
 + (instancetype)numberWithUnsignedLongLong:(unsigned long long)value;
 @end;
 
 __attribute__((swift_name("KotlinFloat")))
-@interface LibraryNameFloat : LibraryNameNumber
+@interface SharedFloat : SharedNumber
 - (instancetype)initWithFloat:(float)value;
 + (instancetype)numberWithFloat:(float)value;
 @end;
 
 __attribute__((swift_name("KotlinDouble")))
-@interface LibraryNameDouble : LibraryNameNumber
+@interface SharedDouble : SharedNumber
 - (instancetype)initWithDouble:(double)value;
 + (instancetype)numberWithDouble:(double)value;
 @end;
 
 __attribute__((swift_name("KotlinBoolean")))
-@interface LibraryNameBoolean : LibraryNameNumber
+@interface SharedBoolean : SharedNumber
 - (instancetype)initWithBool:(BOOL)value;
 + (instancetype)numberWithBool:(BOOL)value;
 @end;
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Greeting")))
-@interface LibraryNameGreeting : LibraryNameBase
+@interface SharedGreeting : SharedBase
 - (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
 + (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
 - (NSString *)greeting __attribute__((swift_name("greeting()")));
@@ -144,7 +144,7 @@ __attribute__((swift_name("Greeting")))
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Platform")))
-@interface LibraryNamePlatform : LibraryNameBase
+@interface SharedPlatform : SharedBase
 - (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
 + (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
 @property (readonly) NSString *platform __attribute__((swift_name("platform")));
